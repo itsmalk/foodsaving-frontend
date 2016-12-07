@@ -17,8 +17,14 @@
     <md-button class="md-raised md-accent" type="submit">
       <span translate="LOGIN.SUBMIT"></span>
     </md-button>
+    <md-button class="md-raised" ng-click="$ctrl.loginFacebook()">
+      <span translate="LOGIN.FACEBOOK_BUTTON"></span>
+    </md-button>
     <md-button ui-sref="signup">
       <span translate="LOGIN.SIGNUP"></span>
     </md-button>
+
+    <p>{{ $ctrl.loginStatus || "no status" }}</p>
+    <pre>{{ $ctrl.me || "no me"}}</pre>
   </form>
 </div>

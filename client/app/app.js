@@ -11,6 +11,7 @@ import AppTranslate from "./app.translate";
 import AppXEditableConfig from "./app.xeditable";
 import "angular-xeditable";
 import "../../node_modules/angular-xeditable/dist/css/xeditable.css";
+import "angular-easyfb";
 import "normalize.css";
 import "../../node_modules/angular-material/angular-material.css";
 import "./fonts/fonts";
@@ -26,6 +27,7 @@ angular.module("app", [
   ngCookies,
   translate,
   translateStorageCookie,
+  "ezfb",
   Common,
   PageComponents
 ]).config(($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider) => {
@@ -48,4 +50,10 @@ angular.module("app", [
 })
 .config(AppTranslate)
 .config(AppMaterial)
+.config((ezfbProvider) => {
+  "ngInject";
+  ezfbProvider.setInitParams({
+    appId: "1179987075388955"
+  });
+})
 .run(AppXEditableConfig);
